@@ -1,0 +1,15 @@
+[Unit]
+Description=Scripts to run on boot for 2015 Capstone Project
+Requires=network-online.target bluetooth.target systemd-networkd-wait-online.service
+After=bluetooth.target network-online.target systemd-networkd-wait-online.service
+                                    
+[Service]
+Type=idle   
+RemainAfterExit=true
+ExecStart=/home/root/ASU_Edison_Robots/config_files/on_boot.sh
+Environment="HOME=/home/root"               
+WorkingDirectory=/home/root/                
+                                        
+[Install]                               
+WantedBy=multi-user.target
+
