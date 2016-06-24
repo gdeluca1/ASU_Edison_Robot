@@ -37,8 +37,8 @@ setInterval(function(){
 var ROBOT_NAME = 'EdisonRobot';
 
 // Wheel ports
-var LEFT_WHEEL_PORT = 3;
-var RIGHT_WHEEL_PORT = 5;
+var LEFT_WHEEL_PORT = 5;
+var RIGHT_WHEEL_PORT = 6;
 
 // The time in ms between checking sensor data.
 var SENSOR_POLLING_TIME = 100;
@@ -186,7 +186,8 @@ var server = net.createServer(function (c) { //'connection' listener
 
 		c.write(JSON.stringify({
 			sensors: [
-				new SensorDataObject("distance", 0, distance),
+				// VIPLE IDs were copied from JJ's code (touch 0, distance 1, light 2).
+				new SensorDataObject("distance", 1, distance),
 				//new SensorDataObject("light", 0, lightValue),
 				new SensorDataObject("touch", 0, touchValue)
 				// More sensor objects can be added here.
