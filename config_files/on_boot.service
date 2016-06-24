@@ -6,7 +6,7 @@ After=bluetooth.target network-online.target systemd-networkd-wait-online.servic
 [Service]
 Type=idle   
 RemainAfterExit=true
-ExecStart=/home/root/ASU_Edison_Robots/config_files/on_boot.sh
+ExecStart=/home/root/ASU_Edison_Robot/config_files/on_boot.sh
 Environment="HOME=/home/root"               
 WorkingDirectory=/home/root/                
                                         
