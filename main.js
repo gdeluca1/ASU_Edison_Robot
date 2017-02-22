@@ -74,9 +74,10 @@ function ServoController(pin, invert) {
 	this.pwm.enable(true);
 	this.pwm.period_us(20000);
 	// These are pulsewidth_us values.
-	this.high = 1750;
-	this.neutral = 1325;
-	this.low = 900;
+	// Values source: https://www.parallax.com/sites/default/files/downloads/900-00008-Continuous-Rotation-Servo-Documentation-v2.2.pdf
+	this.high = 1700;
+	this.neutral = 1500;
+	this.low = 1300;
 	this.setSpeed = function(speed) {
 		if (speed < -1)
 			speed = -1;
